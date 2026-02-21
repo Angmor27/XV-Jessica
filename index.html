@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#C9A87C">
+  <title>Mis XV - Valentina</title>
+  <meta name="description" content="Estas cordialmente invitado(a) a celebrar mis XV junto a mi. Un momento especial que quiero compartir contigo.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ════════════════════════════════════════════════
+       NAV DOTS (Desktop)
+       ════════════════════════════════════════════════ -->
+  <nav class="nav-dots" aria-label="Navegacion de secciones">
+    <a href="#inicio" class="nav-dots__dot"><span class="nav-dots__tooltip">Inicio</span></a>
+    <a href="#cuenta-regresiva" class="nav-dots__dot"><span class="nav-dots__tooltip">Cuenta Regresiva</span></a>
+    <a href="#itinerario" class="nav-dots__dot"><span class="nav-dots__tooltip">Itinerario</span></a>
+    <a href="#ubicacion" class="nav-dots__dot"><span class="nav-dots__tooltip">Ubicacion</span></a>
+    <a href="#vestimenta" class="nav-dots__dot"><span class="nav-dots__tooltip">Vestimenta</span></a>
+    <a href="#agradecimiento" class="nav-dots__dot"><span class="nav-dots__tooltip">Agradecimiento</span></a>
+    <a href="#regalos" class="nav-dots__dot"><span class="nav-dots__tooltip">Regalos</span></a>
+    <a href="#invitados" class="nav-dots__dot"><span class="nav-dots__tooltip">Invitados</span></a>
+  </nav>
+
+  <!-- ════════════════════════════════════════════════
+       MUSIC PROMPT
+       ════════════════════════════════════════════════ -->
+  <div id="musicOverlay" class="music-overlay">
+    <div class="music-modal">
+      <div class="music-modal__icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+      </div>
+      <h3 class="music-modal__title">Bienvenido(a)</h3>
+      <p class="music-modal__desc">Te invitamos a disfrutar esta invitacion con musica de fondo</p>
+      <div class="music-modal__btns">
+        <button class="btn" onclick="startMusic()">Con Musica</button>
+        <button class="btn btn--outline" onclick="closeMusic()">Sin Musica</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating music button -->
+  <button id="musicFab" class="music-fab" onclick="toggleMusic()" aria-label="Reproducir musica">
+    <svg id="iconPlay" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="6 3 20 12 6 21 6 3"/></svg>
+    <svg id="iconPause" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="display:none"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+    <span id="musicPulse" class="music-fab__pulse"></span>
+  </button>
+
+  <!-- ════════════════════════════════════════════════
+       HERO
+       ════════════════════════════════════════════════ -->
+  <section id="inicio" class="hero">
+    <div class="hero__bg">
+      <img src="../images/hero-floral.jpg" alt="Fondo floral elegante">
+      <div class="hero__overlay"></div>
+    </div>
+    <div class="hero__content">
+      <span class="hero__label">Mis XV</span>
+      <h1 class="hero__name">Valentina</h1>
+      <div class="hero__heart">
+        <div class="hero__heart-line"></div>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+        <div class="hero__heart-line"></div>
+      </div>
+      <p class="hero__desc">Con la bendicion de Dios y de mis padres, te invito a celebrar conmigo este dia tan especial</p>
+      <div class="hero__date">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>
+        <span>15 de Agosto, 2026</span>
+      </div>
+
+      <!-- Guest count badge -->
+      <div class="guest-badge">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        Esta invitacion es para <span class="guest-badge__num">3</span> personas
+      </div>
+
+      <a href="#cuenta-regresiva" class="hero__scroll" aria-label="Desplazarse hacia abajo">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════
+       PADRES
+       ════════════════════════════════════════════════ -->
+  <section class="section">
+    <div class="reveal">
+      <div class="container--sm text-center">
+        <p class="section-header__subtitle">Con el amor de</p>
+        <div class="padres__block" style="margin-top:24px">
+          <p class="padres__name">Sr. Roberto Garcia &amp; Sra. Maria Lopez</p>
+          <p class="padres__role">Padres de la Quinceañera</p>
+        </div>
+
+        <div class="divider" style="margin:16px 0">
+          <div class="divider__line"></div>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg>
+          <div class="divider__line"></div>
+        </div>
+
+        <div class="padres__block">
+          <p class="padres__name">Sr. Juan Garcia &amp; Sra. Rosa Martinez</p>
+          <p class="padres__role">Padrinos</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════
+       COUNTDOWN
+       ════════════════════════════════════════════════ -->
+  <section id="cuenta-regresiva" class="section section--alt">
+    <div class="reveal">
+      <div class="section-header">
+        <div class="section-header__icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <span class="section-header__subtitle">Faltan</span>
+        <h2 class="section-header__title">Cuenta Regresiva</h2>
+        <div class="divider">
+          <div class="divider__line"></div>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg>
+          <div class="divider__line"></div>
+        </div>
+      </div>
+
+      <div class="countdown" id="countdown">
+        <div class="countdown__unit">
+          <div class="countdown__box">
+            <div class="countdown__num" id="cd-days">00</div>
+            <span class="countdown__label">Dias</span>
+          </div>
+          <span class="countdown__sep">:</span>
+        </div>
+        <div class="countdown__unit">
+          <div class="countdown__box">
+            <div class="countdown__num" id="cd-hours">00</div>
+            <span class="countdown__label">Horas</span>
+          </div>
+          <span class="countdown__sep">:</span>
+        </div>
+        <div class="countdown__unit">
+          <div class="countdown__box">
+            <div class="countdown__num" id="cd-mins">00</div>
+            <span class="countdown__label">Min</span>
+          </div>
+          <span class="countdown__sep">:</span>
+        </div>
+        <div class="countdown__unit">
+          <div class="countdown__box">
+            <div class="countdown__num" id="cd-secs">00</div>
+            <span class="countdown__label">Seg</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="countdown__subtext">Sabado 15 de Agosto, 2026 &mdash; 4:00 PM</p>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════
+       ITINERARIO
+       ════════════════════════════════════════════════ -->
+  <section id="itinerario" class="section">
+    <div class="reveal">
+      <div class="section-header">
+        <div class="section-header__icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>
+        </div>
+        <span class="section-header__subtitle">Programa</span>
+        <h2 class="section-header__title">Itinerario del Evento</h2>
+        <div class="divider">
+          <div class="divider__line"></div>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg>
+          <div class="divider__line"></div>
+        </div>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline__line"></div>
+
+        <!-- 4:00 PM -->
+        <div class="timeline__item">
+          <div class="timeline__dot">
+            <div class="timeline__dot-ring"></div>
+            <div class="timeline__dot-inner"></div>
+          </div>
+          <div class="timeline__card">
+            <div class="timeline__card-head">
+              <div class="timeline__card-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 2v3a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V2"/><path d="m2 22 10-10"/><path d="m22 22-10-10"/><path d="M12 12v10"/><path d="M12 2v4"/><path d="m2 10 10 2 10-2"/></svg>
+              </div>
+              <span class="timeline__time">4:00 PM</span>
+            </div>
+            <h3 class="timeline__title">Ceremonia Religiosa</h3>
+            <p class="timeline__desc">Misa de accion de gracias en la Parroquia de San Jose</p>
+          </div>
+        </div>
+
+        <!-- 6:00 PM -->
+        <div class="timeline__item">
+          <div class="timeline__dot">
+            <div class="timeline__dot-ring"></div>
+            <div class="timeline__dot-inner"></div>
+          </div>
+          <div class="timeline__card">
+            <div class="timeline__card-head">
+              <div class="timeline__card-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 12h20"/><path d="M20 12v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8"/><path d="m4 8 16-4"/><path d="m8.86 6.78-.45-1.81a2 2 0 0 1 1.45-2.43l1.94-.48a2 2 0 0 1 2.43 1.46l.45 1.8"/></svg>
+              </div>
+              <span class="timeline__time">6:00 PM</span>
+            </div>
+            <h3 class="timeline__title">Recepcion</h3>
+            <p class="timeline__desc">Bienvenida y coctel de recepcion en el salon</p>
+          </div>
+        </div>
+
+        <!-- 7:00 PM -->
+        <div class="timeline__item">
+          <div class="timeline__dot">
+            <div class="timeline__dot-ring"></div>
+            <div class="timeline__dot-inner"></div>
+          </div>
+          <div class="timeline__card">
+            <div class="timeline__card-head">
+              <div class="timeline__card-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg>
+              </div>
+              <span class="timeline__time">7:00 PM</span>
+            </div>
+            <h3 class="timeline__title">Sesion de Fotos</h3>
+            <p class="timeline__desc">Fotos con la quinceañera y sus invitados</p>
+          </div>
+        </div>
+
+        <!-- 8:00 PM -->
+        <div class="timeline__item">
+          <div class="timeline__dot">
+            <div class="timeline__dot-ring"></div>
+            <div class="timeline__dot-inner"></div>
+          </div>
+          <div class="timeline__card">
+            <div class="timeline__card-head">
+              <div class="timeline__card-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.8 11.3 2 22l10.7-3.79"/><path d="M4 3h.01"/><path d="M22 8h.01"/><path d="M15 2h.01"/><path d="M22 20h.01"/><path d="m22 2-2.24.75a2.9 2.9 0 0 0-1.96 3.12c.1.86-.57 1.63-1.45 1.63h-.38c-.86 0-1.6.6-1.76 1.44L14 10"/><path d="m22 13-.82-.33c-.86-.34-1.82.2-1.98 1.11c-.11.63-.69 1.1-1.34 1.02a2.24 2.24 0 0 0-1.55.43L14 17"/></svg>
+              </div>
+              <span class="timeline__time">8:00 PM</span>
+            </div>
+            <h3 class="timeline__title">Fiesta y Baile</h3>
+            <p class="timeline__desc">Vals, brindis, sorpresas y mucha diversion</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════
+       UBICACION
+       ════════════════════════════════════════════════ -->
+  <section id="ubicacion" class="section section--alt">
+    <div class="reveal">
+      <div class="section-header">
+        <div class="section-header__icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <span class="section-header__subtitle">Nos vemos en</span>
+        <h2 class="section-header__title">Ubicacion del Evento</h2>
+        <div class="divider">
+          <div class="divider__line"></div>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg>
+          <div class="divider__line"></div>
+        </div>
+      </div>
+
+      <div class="container--lg">
+        <div class="location-grid">
+          <!-- Ceremonia -->
+          <div class="location-card">
+            <div class="location-card__img">
+              <img src="../images/venue.jpg" alt="Parroquia de San Jose">
+              <div class="location-card__img-overlay"></div>
+              <span class="location-card__tag">Ceremonia</span>
+            </div>
+            <div class="location-card__body">
+              <h3 class="location-card__name">Parroquia de San Jose</h3>
+              <p class="location-card__address">Av. Juarez #123, Col. Centro, Ciudad de Mexico, CP 06000</p>
+              <a href="https://maps.google.com/?q=Parroquia+de+San+Jose+Ciudad+de+Mexico" target="_blank" rel="noopener noreferrer" class="btn">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                Ver en Google Maps
+              </a>
+            </div>
+          </div>
+          <!-- Recepcion -->
+          <div class="location-card">
+            <div class="location-card__img">
+              <img src="../images/venue.jpg" alt="Salon Imperial">
+              <div class="location-card__img-overlay"></div>
+              <span class="location-card__tag">Recepcion</span>
+            </div>
+            <div class="location-card__body">
+              <h3 class="location-card__name">Salon Imperial</h3>
+              <p class="location-card__address">Blvd. de los Virreyes #456, Lomas de Chapultepec, CDMX</p>
+              <a href="https://maps.google.com/?q=Salon+Imperial+Lomas+de+Chapultepec" target="_blank" rel="noopener noreferrer" class="btn">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                Ver en Google Maps
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════
+       VESTIMENTA
+       ════════════════════════════════════════════════ -->
+  <section id="vestimenta" class="section">
+    <div class="reveal">
+      <div class="section-header">
+        <div class="section-header__icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>
+        </div>
+        <span class="section-header__subtitle">Codigo de</span>
+        <h2 class="section-header__title">Vestimenta</h2>
+        <div class="divider">
+          <div class="divider__line"></div>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg>
+          <div class="divider__line"></div>
+        </div>
+      </div>
+
+      <div class="container--sm text-center">
+        <p style="margin-bottom:24px;font-size:16px;line-height:1.6;color:var(--muted)">
+          Te pedimos de favor vestir en los siguientes tonos para mantener la armonia del evento. Vestimenta formal.
+        </p>
+
+        <div class="colors">
+          <div class="colors__item">
+            <div class="colors__swatch" style="background:#E8B4B8"></div>
+            <span class="colors__name">Rosa Pastel</span>
+          </div>
+          <div class="colors__item">
+            <div class="colors__swatch" style="background:#C9A87C"></div>
+            <span class="colors__name">Dorado</span>
+          </div>
+          <div class="colors__item">
+            <div class="colors__swatch" style="background:#F5E6D8"></div>
+            <span class="colors__name">Champagne</span>
+          </div>
+          <div class="colors__item">
+            <div class="colors__swatch" style="background:#FDF8F4"></div>
+            <span class="colors__name">Blanco Hueso</span>
+          </div>
+        </div>
+
+        <div class="dress-note">
+          <p class="dress-note__title">Favor de no vestir de rojo ni negro</p>
+          <p class="dress-note__desc">Estos colores estan reservados</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════
+       AGRADECIMIENTO
+       ════════════════════════════════════════════════ -->
+  <section id="agradecimiento" class="section section--alt">
+    <div class="reveal">
+      <div class="section-header">
+        <div class="section-header__icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/><path d="M15.8 9.2a2.5 2.5 0 0 0-3.5 0l-.3.4-.35-.3a2.42 2.42 0 1 0-3.2 3.6l3.6 3.5 3.6-3.5c1.2-1.2 1.1-2.7.15-3.7z"/></svg>
+        </div>
+        <span class="section-header__subtitle">De corazon</span>
+        <h2 class="section-header__title">Palabras de Agradecimiento</h2>
+        <div class="divider">
+          <div class="divider__line"></div>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg>
+          <div class="divider__line"></div>
+        </div>
+      </div>
+
+      <div class="container--sm text-center">
+        <blockquote class="quote">
+          <span class="quote__mark quote__mark--open">&ldquo;</span>
+          <p class="quote__text">
+            Hoy cierro un capitulo de mi vida y comienzo uno nuevo lleno de ilusiones y sueños.
+            Quiero agradecer a Dios por permitirme llegar a este dia tan especial, a mis padres
+            por su amor incondicional, a mis padrinos por su apoyo y cariño, y a cada uno de
+            ustedes por ser parte de mi vida. Su presencia en este dia es el mejor regalo que
+            puedo recibir.
+          </p>
+          <span class="quote__mark quote__mark--close">&rdquo;</span>
+        </blockquote>
+        <div class="quote__author">
+          <div class="quote__author-line"></div>
+          <span class="quote__author-name">Con amor, Valentina</span>
+          <div class="quote__author-line"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════
+       REGALOS
+       ════════════════════════════════════════════════ -->
+  <section id="regalos" class="section">
+    <div class="reveal">
+      <div class="section-header">
+        <div class="section-header__icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13"/><path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5"/></svg>
+        </div>
+        <span class="section-header__subtitle">Tu presencia es el mejor</span>
+        <h2 class="section-header__title">Regalo</h2>
+        <div class="divider">
+          <div class="divider__line"></div>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg>
+          <div class="divider__line"></div>
+        </div>
+      </div>
+
+      <div class="container--lg">
+        <!-- Banner -->
+        <div class="gifts-banner">
+          <img src="../images/gifts.jpg" alt="Seccion de regalos">
+          <div class="gifts-banner__overlay">
+            <p class="gifts-banner__text">Tu presencia es invaluable, pero si deseas obsequiarme algo...</p>
+          </div>
+        </div>
+
+        <!-- Cards -->
+        <div class="gifts-grid">
+          <!-- Sobre -->
+          <div class="gift-card">
+            <div class="gift-card__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>
+            </div>
+            <h3 class="gift-card__title">Sobre de Efectivo</h3>
+            <p class="gift-card__desc">Si deseas obsequiarme un sobre, puedes entregarlo el dia del evento. Tu presencia es el mejor regalo.</p>
+          </div>
+
+          <!-- Mesa de Regalos -->
+          <div class="gift-card">
+            <div class="gift-card__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13"/><path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5"/></svg>
+            </div>
+            <h3 class="gift-card__title">Mesa de Regalos</h3>
+            <p class="gift-card__desc">Hemos preparado una mesa de regalos en Liverpool. Encuentra los detalles con el siguiente enlace.</p>
+            <a href="#" class="gift-card__link">Ver Mesa de Regalos</a>
+          </div>
+
+          <!-- Transferencia -->
+          <div class="gift-card">
+            <div class="gift-card__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><line x1="3" x2="21" y1="22" y2="22"/><line x1="6" x2="6" y1="18" y2="11"/><line x1="10" x2="10" y1="18" y2="11"/><line x1="14" x2="14" y1="18" y2="11"/><line x1="18" x2="18" y1="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg>
+            </div>
+            <h3 class="gift-card__title">Transferencia Bancaria</h3>
+            <p class="gift-card__desc">Si prefieres hacer un deposito o transferencia, aqui estan los datos bancarios.</p>
+            <div class="bank-info">
+              <p><strong>Banco:</strong> BBVA</p>
+              <p><strong>Titular:</strong> Nombre del Titular</p>
+              <div class="bank-info__clabe-row">
+                <p><strong>CLABE:</strong> <span class="clabe">0123 4567 8901 2345 67</span></p>
+                <button class="btn btn--small" onclick="copyCLABE(this)">Copiar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════
+       PASE INVITADOS
+       ════════════════════════════════════════════════ -->
+  <section id="invitados" class="section section--alt">
+    <div class="reveal">
+      <div class="guest-pass">
+        <div class="guest-pass__icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h2 class="guest-pass__title">Pase para 3 personas</h2>
+        <p class="guest-pass__desc">
+          Esta invitacion es exclusiva e intransferible. Te pedimos respetar el numero de invitados indicado.
+          No se permitira el acceso a personas no contempladas.
+        </p>
+        <div class="guest-pass__people">
+          <div class="guest-pass__person">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <div class="guest-pass__person">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <div class="guest-pass__person">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════
+       HASHTAG
+       ════════════════════════════════════════════════ -->
+  <section class="section" style="padding-top:48px;padding-bottom:48px">
+    <div class="reveal">
+      <div class="hashtag-section">
+        <div class="hashtag-section__label">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+          <span>Comparte tus fotos con el hashtag</span>
+        </div>
+        <p class="hashtag-section__tag">#MisXVValentina</p>
+        <p class="hashtag-section__sub">Etiquetanos en tus historias y publicaciones</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════
+       FOOTER
+       ════════════════════════════════════════════════ -->
+  <footer class="footer">
+    <p class="footer__name">Valentina</p>
+    <p class="footer__date">XV &mdash; 15 de Agosto, 2026</p>
+    <div class="divider" style="margin:12px auto;max-width:200px">
+      <div class="divider__line"></div>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg>
+      <div class="divider__line"></div>
+    </div>
+    <p class="footer__msg">Con todo mi cariño, espero contar con tu presencia</p>
+  </footer>
+
+  <!-- ════════════════════════════════════════════════
+       JAVASCRIPT (countdown, copy, music, scroll reveal)
+       ════════════════════════════════════════════════ -->
+  <script>
+    /* ── Countdown Timer ── */
+    var targetDate = new Date('2026-08-15T16:00:00').getTime();
+
+    function updateCountdown() {
+      var now = Date.now();
+      var diff = targetDate - now;
+      if (diff < 0) diff = 0;
+
+      var days = Math.floor(diff / 86400000);
+      var hours = Math.floor((diff / 3600000) % 24);
+      var mins = Math.floor((diff / 60000) % 60);
+      var secs = Math.floor((diff / 1000) % 60);
+
+      document.getElementById('cd-days').textContent = String(days).padStart(2, '0');
+      document.getElementById('cd-hours').textContent = String(hours).padStart(2, '0');
+      document.getElementById('cd-mins').textContent = String(mins).padStart(2, '0');
+      document.getElementById('cd-secs').textContent = String(secs).padStart(2, '0');
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    /* ── Copy CLABE ── */
+    function copyCLABE(btn) {
+      var clabe = '012345678901234567';
+      navigator.clipboard.writeText(clabe).then(function() {
+        btn.textContent = 'Copiado!';
+        setTimeout(function() { btn.textContent = 'Copiar'; }, 2000);
+      });
+    }
+
+    /* ── Music ── */
+    var isPlaying = false;
+
+    function closeMusic() {
+      document.getElementById('musicOverlay').classList.add('hidden');
+    }
+
+    function startMusic() {
+      document.getElementById('musicOverlay').classList.add('hidden');
+      isPlaying = true;
+      updateMusicUI();
+    }
+
+    function toggleMusic() {
+      isPlaying = !isPlaying;
+      updateMusicUI();
+    }
+
+    function updateMusicUI() {
+      document.getElementById('iconPlay').style.display = isPlaying ? 'none' : 'block';
+      document.getElementById('iconPause').style.display = isPlaying ? 'block' : 'none';
+      document.getElementById('musicPulse').classList.toggle('active', isPlaying);
+    }
+
+    /* ── Scroll Reveal (IntersectionObserver) ── */
+    var reveals = document.querySelectorAll('.reveal');
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    reveals.forEach(function(el) { observer.observe(el); });
+  </script>
+
+</body>
+</html>
